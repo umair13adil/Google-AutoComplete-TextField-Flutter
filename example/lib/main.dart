@@ -79,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
           enabledBorder: InputBorder.none,
         ),
         debounceTime: 400,
+        maxLines: 4,
         countries: ["in", "fr"],
         isLatLngRequired: true,
         getPlaceDetailWithLatLng: (Prediction prediction) {

@@ -35,6 +35,7 @@ class GooglePlaceAutoCompleteTextField extends StatefulWidget {
   FocusNode? focusNode;
   PlaceType? placeType;
   String? language;
+  int? maxLines;
 
   GooglePlaceAutoCompleteTextField(
       {required this.textEditingController,
@@ -54,7 +55,9 @@ class GooglePlaceAutoCompleteTextField extends StatefulWidget {
       this.containerHorizontalPadding,
       this.containerVerticalPadding,
       this.focusNode,
-      this.placeType,this.language='en'});
+      this.placeType,
+      this.language = 'en',
+      this.maxLines = 1});
 
   @override
   _GooglePlaceAutoCompleteTextFieldState createState() =>
@@ -100,6 +103,7 @@ class _GooglePlaceAutoCompleteTextFieldState
                 style: widget.textStyle,
                 controller: widget.textEditingController,
                 focusNode: widget.focusNode ?? FocusNode(),
+                maxLines: widget.maxLines,
                 onChanged: (string) {
                   subject.add(string);
                   if (widget.isCrossBtnShown) {
